@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Details | Kisan Portal</title>
+  <link rel="stylesheet" href="farmer-detail.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- 🌾 Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌾 Kisan Portal</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farmer_registration_form.html">Registration</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="farm_detail.html" class="active">Farm Details</a></li>
+        
+        <li><a href="selling and market preferece.html">Selling and Market Preference</a></li>
+        <li><a href="Login.html">Login</a></li> 
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 📍 Location Form -->
+  <main class="location-container">
+    <div class="location-form">
+      <h2>Farm Details</h2>
+      <p class="form-subtitle">Please enter your current farm details.</p>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="farm_size">Farm Size:</label>
+          <input type="text" id="farm_size" name="farm_size" placeholder="Enter your farm size" required />
+        </div>
+
+        <div class="form-group">
+          <label for="crop_type">Crop Type:</label>
+          <select id="crop_type" name="crop_type" required>
+            <option value="">Select Crop Type</option>
+            <option>Wheat</option>
+            <option>Rice</option>
+            <option>Corn</option>
+            <option>Vegetables</option>
+            <option>Fruits</option>
+           
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="season">Season:</label>
+          <select id="season" name="season" required>
+            <option value="">Select Season</option>
+            <option>Kharif</option>
+            <option>Rabi</option>
+            <option>Zaid</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="irrigation_type">Enter Irrigation Type:</label>
+          <select id="irrigation_type" name="irrigation_type" required>
+            <option value="">Select Irrigation Type</option>
+            <option>Canal</option>
+            <option>Tube Well</option>
+            <option>Rainfed</option>
+            <option>Drip</option>
+            <option>Sprinkler</option>
+            <option>Surface</option>
+            <option>Subsurface</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fertilizer_use">Fertilizer Use:</label>
+
+         <Select id="fertilizer_use" name="fertilizer_use" required>
+            <option value="">Select Fertilizer Use</option>
+            <option>Organic</option>
+            <option>Inorganic</option>
+            <option>Mixed</option>
+          </select>
+        </div>
+
+         <div class="form-group">
+          <label for="soil_type">Soil Type:</label>
+
+         <Select id="soil_type" name="soil_type" required>
+            <option value="">Select Soil Type</option>
+            <option>Alluvial</option>
+            <option>Black</option>
+            <option>Red</option>
+            <option>Laterite</option>
+            <option>Desert</option>
+            <option>Mountainous</option>
+          </select>
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn" onclick="window.location.href='registration.html'">← Back</button>
+          <button type="submit" class="next-btn">Next →</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

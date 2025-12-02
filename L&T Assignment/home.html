@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroConnect | Empowering Farmers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: #f4fbf4;
+      overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    header {
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      animation: slideDown 0.8s ease;
+    }
+    @keyframes slideDown {
+      from { top: -80px; }
+      to { top: 0; }
+    }
+    header h1 {
+      font-size:1.9rem;
+      color:#2e8b57;
+      font-weight:700;
+      cursor:pointer;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:30px;
+    }
+    nav ul li a {
+      color:#2e8b57;
+      text-decoration:none;
+      font-weight:600;
+      font-size:1rem;
+      transition:0.3s;
+    }
+    nav ul li a:hover {
+      color:#1b5e3b;
+      text-shadow:0px 0px 5px #97ffb3;
+    }
+    .hero {
+      height:100vh;
+      width:100%;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,90,45,0.5)),
+        url("https://as1.ftcdn.net/v2/jpg/02/96/26/82/1000_F_296268274_ytY0Jo0RFnJip1M2KSE9SXzC4Hw7m9kb.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      text-align:center;
+      padding:0 20px;
+    }
+    .hero-content {
+      animation: fadeUp 1.3s ease;
+      max-width:800px;
+    }
+    @keyframes fadeUp {
+      0% { opacity:0; transform: translateY(30px); }
+      100% { opacity:1; transform: translateY(0); }
+    }
+    .hero h2 {
+      font-size:3.2rem;
+      margin-bottom:15px;
+      line-height:1.2;
+      text-shadow:0 0 10px rgba(0,0,0,0.6);
+    }
+    .hero p {
+      font-size:1.2rem;
+      margin-bottom:30px;
+      opacity:0.9;
+    }
+    .hero button {
+      padding:14px 32px;
+      font-size:1.1rem;
+      border:none;
+      border-radius:30px;
+      background:#97ffb3;
+      color:#0a472b;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+    .hero button:hover {
+      background:white;
+      transform: scale(1.1);
+    }
+
+    /* Spline embed style */
+    
+
+    .features {
+      padding:80px 60px;
+      background:#fff;
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap:40px;
+    }
+    .feature-box {
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+      text-align:center;
+      transition:0.4s;
+      cursor:pointer;
+    }
+    .feature-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .feature-box img {
+      width:75px;
+      margin-bottom:18px;
+      filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.2));
+    }
+    .feature-box h3 {
+      color:#2e8b57;
+      margin-bottom:10px;
+      font-size:1.3rem;
+      font-weight:700;
+    }
+    .feature-box p {
+      font-size:1rem;
+      opacity:0.8;
+    }
+    .about {
+      padding:90px 60px;
+      background: linear-gradient(to bottom right, #e7ffe7, #c9fdd1);
+      text-align:center;
+    }
+    .about h2 {
+      font-size:2.3rem;
+      margin-bottom:20px;
+      color:#1b5e3b;
+    }
+    .about p {
+      max-width:850px;
+      margin:auto;
+      font-size:1.15rem;
+      line-height:1.7;
+      opacity:0.9;
+    }
+    footer {
+      background:#2e8b57;
+      color:white;
+      text-align:center;
+      padding:25px;
+      font-size:1rem;
+      margin-top:40px;
+    }
+    @media (max-width: 768px) {
+      .hero h2 { font-size:2rem; }
+      header { flex-direction:column; gap:10px; }
+      nav ul { gap:15px; }
+      .spline-embed { height: 420px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <h1>🌾 AgroConnect</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="farmer_registration_form.html">For Farmers</a></li>
+        <li><a href="#">For Buyers</a></li>
+        <li><a href="#">Market Rates</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Connecting Farmers and Buyers, Directly.</h2>
+      <p>Empowering farmers with fair pricing, transparency, and direct access to buyers.</p>
+      <button onclick="learnMore()">Explore Platform</button>
+    </div>
+  </section>
+
+  
+
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3349/3349206.png" alt="Sell Crops">
+      <h3>Sell Crops Easily</h3>
+      <p>List your crops and get direct buyers within minutes.</p>
+    </div>
+
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Market Rates">
+      <h3>Live Market Rates</h3>
+      <p>Stay updated with real-time mandi and market prices.</p>
+    </div>
+
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/3314/3314921.png" alt="Weather Alerts">
+      <h3>Weather Alerts</h3>
+      <p>Instant weather updates and farming alerts.</p>
+    </div>
+
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" alt="Smart Farming Tips">
+      <h3>Smart Farming Tips</h3>
+      <p>Boost crop productivity with expert guidance.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <h2>About AgroConnect</h2>
+    <p>
+      AgroConnect bridges the gap between farmers and buyers by removing the middlemen,
+      ensuring transparency and fair value. Our mission is to revolutionize agriculture
+      through technology and real-time farming data.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 AgroConnect | Designed with ❤️ to Support Farmers
+  </footer>
+
+  <script>
+    function learnMore() {
+      window.location.href = "farmer_registration_form.html";
+    }
+
+    // Page fade-in animation
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>

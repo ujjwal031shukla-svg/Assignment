@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us</title>
+  <style>
+    .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fefae0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+.logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fefae0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffe8a3;
+  border-bottom: 2px solid #ffe8a3;
+  padding-bottom: 3px;
+}
+
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22c55e;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 0%, #0b1220 0%, var(--bg) 50%, #0b1220 100%);
+      color: var(--text);
+    }
+    .container {
+      max-width: 940px; margin: 0 auto; padding: 40px 20px;
+    }
+    header {
+      text-align: center; margin-bottom: 28px;
+    }
+    header h1 {
+      font-size: 2.1rem; margin: 0 0 8px;
+      letter-spacing: 0.5px;
+    }
+    header p {
+      color: var(--muted); margin: 0; font-size: 1rem;
+    }
+    .grid {
+      display: grid; gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 22px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--card), #0b1321 60%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .badge {
+      position: absolute; top: 14px; right: 14px;
+      background: #0a0f19; border: 1px solid var(--border);
+      color: var(--muted); font-size: 12px; padding: 4px 8px; border-radius: 999px;
+    }
+    .name { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; }
+    .role { color: var(--muted); font-size: 0.95rem; margin-bottom: 12px; }
+    .bio { color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; margin-bottom: 14px; }
+    .contact a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text); text-decoration: none;
+      background: #0a0f19; border: 1px solid var(--border);
+      padding: 8px 10px; border-radius: 10px; margin-right: 8px; margin-bottom: 8px;
+      transition: border-color 0.2s, transform 0.2s;
+      font-size: 0.9rem;
+    }
+    .contact a:hover { border-color: var(--accent); transform: translateY(-1px); }
+    footer {
+      margin-top: 32px; color: var(--muted); font-size: 0.9rem; text-align: center;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <header>
+      <h1>About Us</h1>
+      <p>We’re a small, focused team building practical solutions with clarity and speed.</p>
+    </header>
+
+    <section class="grid">
+      <!-- Ansh Shukla -->
+      <div class="card">
+        <span class="badge">Team</span>
+        <div class="name">Ansh Shukla</div>
+        <div class="role">Co-founder · Product & Delivery</div>
+        <p class="bio">
+          Drives execution from idea to launch. Keeps projects simple, user-centered, and on schedule.
+        </p>
+        <div class="contact">
+          <a href="tel:+919044123970" aria-label="Call Ansh">📞 Call</a>
+          <a href="mailto:ujjwal031shukla@gmail.com" aria-label="Email Ansh">✉️ Email</a>
+        </div>
+      </div>
+
+      <!-- Raj Vishwakarma -->
+      <div class="card">
+        <span class="badge">Team</span>
+        <div class="name">Raj Vishwakarma</div>
+        <div class="role">Co-founder · Engineering</div>
+        <p class="bio">
+          Builds robust backends and clean UIs. Focused on performance, reliability, and maintainable code.
+        </p>
+        <div class="contact">
+          <a href="tel:+919369381697" aria-label="Call Raj">📞 Call</a>
+          <a href="mailto:trickyfinisher000@gmail.com" aria-label="Email Raj">✉️ Email</a>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <footer>
+      Built with care and shipped fast. If you need more sections (mission, timeline, FAQs), tell us what to add.
+    </footer>
+  </div>
+</body>
+</html>

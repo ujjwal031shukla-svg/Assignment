@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us</title>
+  <meta name="description" content="Contact us — send a message, find our address and phone number." />
+  <style>
+    :root{ --bg:#0f1724; --card:#0b1220; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.03);} 
+    *{box-sizing:border-box}
+    body{font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:linear-gradient(180deg,#071024 0%, #081426 60%); color:#e6eef6; -webkit-font-smoothing:antialiased;}
+    .container{max-width:1050px;margin:48px auto;padding:24px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:28px; box-shadow: 0 6px 30px rgba(2,6,23,0.6); display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+
+    /* form */
+    form{display:flex;flex-direction:column;gap:14px}
+    label{font-size:13px;color:#cfe6f6}
+    .row{display:flex;gap:12px}
+    .input, textarea, select{background:var(--glass);border:1px solid rgba(255,255,255,0.04); padding:12px 14px;border-radius:8px;color:inherit; font-size:14px; width:100%;}
+    .input:focus, textarea:focus{outline:none; box-shadow:0 0 0 4px rgba(6,182,212,0.08); border-color:var(--accent)}
+    textarea{min-height:140px; resize:vertical}
+    .small{font-size:13px;color:var(--muted)}
+    .actions{display:flex;gap:12px;align-items:center;margin-top:6px}
+    .btn{background:var(--accent); color:#042024; border:none; padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06); color:var(--muted)}
+
+    /* side info */
+    .side{background:rgba(255,255,255,0.02); border-radius:10px;padding:18px}
+    .contact-item{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}
+    .icon{width:36px;height:36px;flex:0 0 36px;border-radius:8px;background:rgba(255,255,255,0.03);display:grid;place-items:center}
+    .contact-item h4{margin:0;font-size:15px}
+    .contact-item p{margin:2px 0 0;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:880px){.card{grid-template-columns:1fr;}.container{margin:18px;padding:16px}}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="card" role="region" aria-labelledby="contact-heading">
+      <section>
+        <h1 id="contact-heading">Contact Us</h1>
+        <p class="lead">Have a question, feedback or partnership inquiry? Fill the form and we'll get back to you within 1–2 business days.</p>
+
+        <form id="contactForm" action="#" method="post" novalidate>
+          <div class="row">
+            <div style="flex:1">
+              <label for="name">Full name</label>
+              <input id="name" name="name" class="input" type="text" placeholder="Salman khan" required aria-required="true" />
+            </div>
+            <div style="flex:1">
+              <label for="email">Email</label>
+              <input id="email" name="email" class="input" type="email" placeholder="you@example.com" required aria-required="true" />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" class="input" type="text" placeholder="What is this about?" />
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." required aria-required="true"></textarea>
+            <div class="small" aria-hidden="true">Minimum 20 characters</div>
+          </div>
+
+          <div class="actions">
+            <button type="submit" class="btn">Send message</button>
+            <button type="button" class="btn ghost" id="clearBtn">Clear</button>
+            <div id="status" class="small" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <script>
+          (function(){
+            const form = document.getElementById('contactForm');
+            const status = document.getElementById('status');
+            const clearBtn = document.getElementById('clearBtn');
+
+            function validate(){
+              const name = form.name.value.trim();
+              const email = form.email.value.trim();
+              const message = form.message.value.trim();
+              if(!name) return 'Please enter your name.';
+              if(!email) return 'Please enter your email.';
+              // simple email pattern
+              const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if(!re.test(email)) return 'Please enter a valid email address.';
+              if(message.length < 20) return 'Message should have at least 20 characters.';
+              return '';
+            }
+
+            form.addEventListener('submit', function(e){
+              e.preventDefault();
+              status.textContent = '';
+              const err = validate();
+              if(err){ status.textContent = err; status.style.color='tomato'; return; }
+
+              // --- Replace this block with an actual fetch to your backend endpoint ---
+              const payload = { name: form.name.value.trim(), email: form.email.value.trim(), subject: form.subject.value.trim(), message: form.message.value.trim() };
+              console.log('Sending contact payload', payload);
+
+              // Simulated success
+              status.style.color='lightgreen';
+              status.textContent = 'Message sent — thank you!';
+              form.reset();
+              // ----------------------------------------------------------------------
+            });
+
+            clearBtn.addEventListener('click', ()=>{ form.reset(); status.textContent=''; });
+          })();
+        </script>
+      </section>
+
+      <aside class="side" aria-label="Contact details">
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">📍</div>
+          <div>
+            <h4>Office</h4>
+            <p>SRMU Barabanki,<br/>Uttar Pradesh, India</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:ujjwal031shukla@gmail.com, <br/>trickyfinisher000@gmail.com">ujjwal031shukla@gmail.com<br/>trickyfinisher000@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">📞</div>
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+911234567890">+91 90441 23970<br/>+91 93693 81697</a></p>
+          </div>
+        </div>
+
+        <div style="margin-top:8px;color:var(--muted);font-size:13px">Business hours: Mon–Fri, 9:00–18:00 IST</div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
