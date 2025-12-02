@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location Details | Kisan Portal</title>
+  <link rel="stylesheet" href="selling.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- 🌾 Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌾 Kisan Portal</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="farmer_registration_form.html">Registration</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="farm_detail.html">Farmer Details</a></li>
+        <li><a href="selling and market preferece.html" class="active">Selling and Market Preference</a></li>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 📍 Location Form -->
+  <main class="location-container">
+    <div class="location-form">
+      <h2>Farm Details</h2>
+      <p class="form-subtitle">Please enter your Selling And Market Preferences.</p>
+
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="prefferred_market">Prefferred Market:</label>
+          <input type="text" id="prefferred_market" name="prefferred_market" placeholder="Enter your Prefferred Market" required />
+        </div>
+
+        <div class="form-group">
+          <label for="expected_price">Expected Price:</label>
+        <input type="number" id="expected_price" name="expected_price" placeholder="Enter your Expected price" required />
+        </div>
+
+        <div class="form-group">
+          <label for="quatity_available">Quantity Available:</label>
+         <input type="number" id="quatity_available" name="quatity_available" placeholder="Enter your Quatity_available" required />
+           
+        </div>
+
+        <div class="form-group">
+          
+          <label for="availability_date">Availability Date:</label>
+            <input type="date" id="availability_date" name="availability_date" placeholder="Enter your Availability Date" required />
+        </div>
+
+       
+
+        <div class="form-buttons">
+          <button type="button" class="back-btn" onclick="window.location.href='registration.html'">← Back</button>
+          <button type="submit" class="next-btn">Next →</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+</html>

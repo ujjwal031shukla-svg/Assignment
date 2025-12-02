@@ -1,0 +1,162 @@
+/* 🌿 Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 🌾 Background styling */
+body {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("okj.jpg") no-repeat center center/cover;
+  color: #fefae0;
+}
+
+/* 🧭 Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fefae0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fefae0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffe8a3;
+  border-bottom: 2px solid #ffe8a3;
+  padding-bottom: 3px;
+}
+
+/* 🧾 Registration Form Container */
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 50px;
+}
+
+/* 📋 Form box */
+.registration-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌾 Heading */
+.registration-form h2 {
+  text-align: center;
+  color: #ffe8a3;
+  margin-bottom: 10px;
+  font-size: 1.9em;
+  text-shadow: 1px 1px 2px #3a3a3a;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 0.9em;
+  color: #eaeaea;
+  margin-bottom: 25px;
+}
+
+/* 🏷️ Input styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.registration-form input,
+.registration-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: 0.3s;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+  border: 2px solid #6a994e;
+  box-shadow: 0 0 5px #6a994e;
+}
+
+/* 🟩 Button styling */
+.registration-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(90deg, #6a994e, #386641);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.registration-form button:hover {
+  background: linear-gradient(90deg, #5a8c45, #315f36);
+  transform: scale(1.02);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .registration-form {
+    padding: 30px 25px;
+  }
+
+  .registration-form h2 {
+    font-size: 1.6em;
+  }
+}
